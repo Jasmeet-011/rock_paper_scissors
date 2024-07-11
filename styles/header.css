@@ -1,0 +1,12 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+	background-color: black;
+	color: white;
+	height: 80px;
+	line-height: 80px;
+	
+}
