@@ -13,17 +13,20 @@ const getCompChoice = () => {
 
 const drawGame = () => {
   msg.innerText = "Draw";
+  msg.style.backgroundColor = "blue";
 };
 
-const showWinner = (userWin) => {
+const showWinner = (userWin, userchoice, compChoice) => {
   if (userWin) {
-    msg.innerText = "You Won";
+    msg.innerText = `You Won! Your ${userchoice} beats ${compChoice}`;
     userScore++;
     user.innerText = userScore;
+    msg.style.backgroundColor = "green";
   } else {
-    msg.innerText = "You Lost";
+    msg.innerText = `You Lost! ${compChoice} beats your ${userchoice}`;
     compScore++;
     comp.innerText = compScore;
+    msg.style.backgroundColor = "red";
   }
 };
 
@@ -42,7 +45,7 @@ const playGame = (userchoice) => {
     } else {
       userWin = compChoice === "rock" ? false : true;
     }
-    showWinner(userWin);
+    showWinner(userWin, userchoice, compChoice);
   }
 };
 
